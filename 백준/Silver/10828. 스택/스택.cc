@@ -12,12 +12,12 @@ int main() {
 		string op;
 		getline(cin, op);
 		
-	    vector<string> v;
+		vector<string> v;
 		stringstream ss(op);
-	    string word;
-	    while(ss >> word) {
-	    	v.push_back(word);
-	    }     
+		string word;
+		while(ss >> word) {
+			v.push_back(word);
+	    }
 		if(!v[0].compare("push")) {
 			s.push(stoi(v[1]));
 		}
