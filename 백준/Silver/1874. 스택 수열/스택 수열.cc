@@ -7,34 +7,29 @@ int main() {
 	cout.tie(NULL);
 	int n; cin>>n;
 	stack<int> s;
-	vector<char> v;
+	vector<char> ans;
 	bool flag = false;
 	int in = 1;
 	for(int i=1; i<=n; i++) {
 		int tmp; cin>>tmp;
-		if(s.empty()) {
+		while(in <= tmp) {
 			s.push(in++);
-			v.push_back('+');
+			ans.push_back('+');
 		}
-		while(1) {
-			if(s.top() == tmp) {
-				v.push_back('-');
-				s.pop();
-				break;
-			}
-			if(in >= n+1) {
-				flag = true;
-				break;
-			}
-			s.push(in++);
-			v.push_back('+');
+		
+		if(s.top() == tmp) {
+			s.pop();
+			ans.push_back('-');
+		}
+		else {
+			flag = true;
 		}
 	}
 	if(flag) {
 		cout<<"NO";
 	}
 	else {
-		for(char &i : v) cout<<i<<'\n';
+		for(char &c : ans) cout<<c<<'\n';
 	}
 	return 0;
 }
