@@ -29,7 +29,6 @@ int main() {
 			if(visit[cur]) continue;
 			visit[cur] = true;
 			for(int&next:adj[cur]) {
-				if(visit[next]) continue;
 				q.push(next);
 			}
 		}
